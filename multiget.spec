@@ -7,22 +7,22 @@ License:        GPLv2+
 URL:            http://multiget.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.src.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:  wxGTK2.8-devel
+BuildRequires:  wxGTK2.8-devel ImageMagick
 
 %description
 
 %post
 %update_menus
-%update_icon_cache hicolor
 
 %postun
 %clean_menus
-%clean_icon_cache hicolor
 
-%files -f %{name}.lang
+%files
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
-%{_datadir}/%{name}
+%{_iconsdir}/*.png
+%{_miconsdir}/*.png
+%{_liconsdir}/*.png
 %{_datadir}/applications/*.desktop
 
 #--------------------------------------------------------------------
@@ -39,12 +39,23 @@ NOCONFIGURE=yes ./autogen.sh
 rm -rf %buildroot
 %makeinstall_std
 
-desktop-file-install --vendor='' \
-	--dir=%buildroot%_datadir/applications \
-	--add-category='GTK' \
-	%buildroot%_datadir/applications/*.desktop
+mkdir -p %buildroot{%_iconsdir,%_miconsdir,%_liconsdir}
+convert newicons/16/logo_16.xpm %buildroot%_miconsdir/%{name}.png
+convert newicons/32/logo_32.xpm %buildroot%_iconsdir/%{name}.png
+convert newicons/48/logo_48.xpm %buildroot%_liconsdir/%{name}.png
 
-%find_lang %name
+mkdir -p %buildroot%_datadir/applications
+cat > %buildroot%_datadir/applications/mandriva-%{name}.desktop <<EOF
+[Desktop Entry]
+Name=%{name}
+Icon=%{name}
+Exec=%{name}
+Comment=Multiget is multi-thread download utility
+Terminal=false
+Type=Application
+Categories=GTK;FileTransfer;Network;
+StartupNotify=false
+EOF
 
 %clean
 rm -rf $RPM_BUILD_ROOT
