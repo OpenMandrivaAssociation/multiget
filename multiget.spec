@@ -1,7 +1,7 @@
 Name:           multiget
 Version:        1.2.0
-Release:        %mkrel 1
-Summary:        Multiget is multi-thread download utility
+Release:        %mkrel 2
+Summary:	MultiGet is an easy-to-use GUI file downloader for Windows/Linux/BSDs/MacOs
 Group:          Networking/File transfer
 License:        GPLv2+
 URL:            http://multiget.sourceforge.net/
@@ -10,6 +10,14 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:  wxGTK2.8-devel ImageMagick intltool libtool glib2-devel libglade2-devel
 
 %description
+MultiGet is an easy-to-use GUI file downloader for Windows/Linux/
+BSDs/MacOs.  It's programmed in C++ and has a GUI based on wxWidgets.
+It supports HTTP/FTP protocols which covers the requirements of most
+users. It supports multi-task with multi-thread on multi-server. It
+supports resuming downloads if the Web server supports it, and if
+you like, you can reconfig the thread number without stopping the
+current task. It's also support SOCKS 4,4a,5 proxy, ftp proxy, http
+proxy.
 
 %post
 %update_menus
