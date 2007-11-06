@@ -57,5 +57,7 @@ Categories=GTK;FileTransfer;Network;
 StartupNotify=false
 EOF
 
+rm -fr %buildroot%_prefix/doc/%{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
