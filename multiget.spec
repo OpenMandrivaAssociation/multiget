@@ -1,7 +1,7 @@
 Name:           multiget
 Version:        1.2.0
 Release:        %mkrel 2
-Summary:	MultiGet is an easy-to-use GUI file downloader for Windows/Linux/BSDs/MacOs
+Summary:	Easy-to-use GUI file downloader for Windows/Linux/BSDs/MacOs
 Group:          Networking/File transfer
 License:        GPLv2+
 URL:            http://multiget.sourceforge.net/
