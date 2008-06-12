@@ -19,11 +19,15 @@ you like, you can reconfig the thread number without stopping the
 current task. It's also support SOCKS 4,4a,5 proxy, ftp proxy, http
 proxy.
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %files
 %defattr(-,root,root,-)
