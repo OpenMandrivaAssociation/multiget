@@ -1,6 +1,6 @@
 Name:           multiget
 Version:        1.2.0
-Release:        %mkrel 3
+Release:        %mkrel 5
 Summary:	Easy-to-use GUI file downloader for Windows/Linux/BSDs/MacOs
 Group:          Networking/File transfer
 License:        GPLv2+
