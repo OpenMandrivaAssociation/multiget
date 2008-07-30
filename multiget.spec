@@ -6,6 +6,7 @@ Group:          Networking/File transfer
 License:        GPLv2+
 URL:            http://multiget.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.src.tar.bz2
+Patch0:		multiget-1.2-fix-gcc43.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:  wxGTK2.8-devel ImageMagick intltool libtool glib2-devel libglade2-devel
 
@@ -41,6 +42,7 @@ proxy.
 
 %prep
 %setup -q -n %name
+%patch0 -p1
 
 %build
 NOCONFIGURE=yes ./autogen.sh
