@@ -8,7 +8,7 @@ URL:            http://multiget.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.src.tar.bz2
 Patch0:		multiget-1.2-fix-gcc43.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires:  wxGTK2.8-devel ImageMagick intltool libtool glib2-devel libglade2-devel
+BuildRequires:  wxGTK2.8-devel imagemagick intltool libtool glib2-devel libglade2-devel
 
 %description
 MultiGet is an easy-to-use GUI file downloader for Windows/Linux/
