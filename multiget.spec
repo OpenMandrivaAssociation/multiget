@@ -8,6 +8,7 @@ URL:		http://multiget.sourceforge.net/
 Source0:	http://nchc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.src.tar.bz2
 Patch0:		multiget-1.2-fix-gcc46.patch
 Patch1:		multiget-1.2-fix-wx.patch
+Patch2:		multiget-1.2-linking.patch
 BuildRequires:	wxgtku-devel
 BuildRequires:	imagemagick
 BuildRequires:	intltool
@@ -39,6 +40,12 @@ proxy.
 %setup -q -n %{name}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+# Fix permissions to make rpmlint happy with debug package
+chmod 644 src/*
+chmod 644 icons/*
+chmod 644 newicons/*/*.xpm
+chmod 644 newicons/*.xcf
 
 %build
 NOCONFIGURE=yes ./autogen.sh
