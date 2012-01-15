@@ -13,7 +13,7 @@ BuildRequires:	imagemagick
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	glib2-devel
-BuildRequires:	libglade2-devel
+BuildRequires:	pkgconfig(libglade-2.0)
 
 %description
 MultiGet is an easy-to-use GUI file downloader for Windows/Linux/
