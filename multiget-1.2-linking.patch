@@ -1,0 +1,24 @@
+diff -urN multiget/src/Makefile.am multiget-patched/src/Makefile.am
+--- multiget/src/Makefile.am	2007-10-26 00:45:56.000000000 +1100
++++ multiget-patched/src/Makefile.am	2012-01-15 22:43:45.920097627 +1100
+@@ -111,5 +111,6 @@
+ 
+ multiget_LDADD = \
+ 	$(MULTIGET_LIBS) \
+-	$(WX_LIBS)
++	$(WX_LIBS) \
++	-pthread
+ 
+diff -urN multiget/src/Makefile.in multiget-patched/src/Makefile.in
+--- multiget/src/Makefile.in	2007-10-26 00:46:43.000000000 +1100
++++ multiget-patched/src/Makefile.in	2012-01-15 22:39:52.312093986 +1100
+@@ -353,7 +353,8 @@
+ multiget_LDFLAGS = 
+ multiget_LDADD = \
+ 	$(MULTIGET_LIBS) \
+-	$(WX_LIBS)
++	$(WX_LIBS) \
++	-pthread
+ 
+ all: all-am
+ 

@@ -1,0 +1,67 @@
+diff -urN multiget/src/batch.cpp multiget-patched/src/batch.cpp
+--- multiget/src/batch.cpp	2007-01-13 21:09:02.000000000 +1000
++++ multiget-patched/src/batch.cpp	2012-01-15 21:51:18.687104033 +1100
+@@ -21,10 +21,12 @@
+  *  along with this program; if not, write to the Free Software
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+-
++
++#include <cstdlib>
+ #include "batch.h"
+ #include "common.h"
+ #include <iostream>
++#include <cstdio>
+ 
+ CBatch::CBatch( std::string str )
+ {
+diff -urN multiget/src/common.cpp multiget-patched/src/common.cpp
+--- multiget/src/common.cpp	2007-01-13 21:09:02.000000000 +1000
++++ multiget-patched/src/common.cpp	2012-01-15 21:51:18.687104033 +1100
+@@ -21,7 +21,8 @@
+  *  along with this program; if not, write to the Free Software
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+-
++
++#include <cstdlib>
+ #include "common.h"
+ #include "speedctrl.h"
+ #include "mirroradmin.h"
+diff -urN multiget/src/mgftpbase.cpp multiget-patched/src/mgftpbase.cpp
+--- multiget/src/mgftpbase.cpp	2007-01-13 21:09:02.000000000 +1000
++++ multiget-patched/src/mgftpbase.cpp	2012-01-15 21:51:18.688104033 +1100
+@@ -21,7 +21,9 @@
+  *  along with this program; if not, write to the Free Software
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+-
++
++#include <cstdlib>
++#include <cstdio>
+ #ifdef WIN32
+ #include <winsock2.h>
+ #endif
+diff -urN multiget/src/mghttpbase.cpp multiget-patched/src/mghttpbase.cpp
+--- multiget/src/mghttpbase.cpp	2007-01-13 21:09:02.000000000 +1000
++++ multiget-patched/src/mghttpbase.cpp	2012-01-15 21:52:06.872103523 +1100
+@@ -48,6 +48,7 @@
+ 
+ #include "mghttpbase.h"
+ #include <iostream>
++#include <cstdio>
+ 
+ using namespace std;
+ 
+diff -urN multiget/src/mgurlparser.cpp multiget-patched/src/mgurlparser.cpp
+--- multiget/src/mgurlparser.cpp	2007-01-29 13:51:58.000000000 +1000
++++ multiget-patched/src/mgurlparser.cpp	2012-01-15 21:51:18.688104033 +1100
+@@ -22,6 +22,8 @@
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+ 
++#include <cstdlib>
++#include <cstring>
+ 
+ #include "mgurlparser.h"
+ #include "common.h"
