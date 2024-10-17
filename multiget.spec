@@ -4,7 +4,7 @@ Release:	%mkrel 7
 Summary:	Easy-to-use GUI file downloader for Windows/Linux/BSDs/MacOs
 Group:		Networking/File transfer
 License:	GPLv2+
-URL:		http://multiget.sourceforge.net/
+URL:		https://multiget.sourceforge.net/
 Source0:	http://nchc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.src.tar.bz2
 Patch0:		multiget-1.2-fix-gcc46.patch
 Patch1:		multiget-1.2-fix-wx.patch
