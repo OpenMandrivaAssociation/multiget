@@ -9,6 +9,11 @@ Source0:	http://nchc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.s
 Patch0:		multiget-1.2-fix-gcc46.patch
 Patch1:		multiget-1.2-fix-wx.patch
 Patch2:		multiget-1.2-linking.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	wxgtku-devel
 BuildRequires:	imagemagick
 BuildRequires:	intltool
